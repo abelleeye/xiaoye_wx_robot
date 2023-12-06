@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+
+  xiaoye_wx_robot:
+    image: abelleeye/xiaoye_wx_robot:${XIAOYE_WX_ROBOT_VERSION}
+    container_name: xiaoye_wx_robot
+    working_dir: /xiaoye_wx_robot
+    # restart: always
+    environment:
+      - XIAOYE_WX_ROBOT_NAME=${XIAOYE_WX_ROBOT_NAME}
+      - XIAOYE_WX_ROBOT_TOKEN=${XIAOYE_WX_ROBOT_TOKEN}
+    command: yarn dev
